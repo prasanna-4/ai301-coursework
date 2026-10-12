@@ -15,15 +15,11 @@ label is not graded.
 
 **Pull request**
 
-[Link to the pull request you opened. It must be the pull request's own page on the Path
-Review repo, not your fork's branch page.]
+https://github.com/codepath/pathreview-ai301-fa26-s1/pull/[YOUR_PR_NUMBER]
 
 **Branch**
 
-[The name of the branch the pull request comes from, exactly as it appears in your fork.
-The naming shape is a type prefix, then the issue number, then a short description. **The
-issue number in the branch name must be the number of the issue the pull request fixes** —
-a name carrying any other number does not satisfy this field.]
+fix/68-keyword-searcher-zero-division
 
 ## Eval iterations
 
@@ -32,28 +28,29 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+20/20 (agreement: 20/20 scored items)
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+Package: `pkg-02` (Textualize/rich#4208)
+
+Gold label: `accept`
+
+My rubric verdict: `accept`
+
+Reasoning: The PR matches the plan exactly — all changed files fall within the scope (`rich/console.py` and `tests/test_console.py`), with a CHANGELOG.md entry as required. The test evidence is decisive: the issue's script is re-run before and after showing `export_text()` remains populated after a failed save (before: empty, after: 'IMPORTANT OUTPUT\n'), and pytest passes. The diff is clean with no debug output or dead code; commits are clear ('console: clear recorded output only after save_* writes succeed'). The template sections are all filled substantively (Type of changes: Bug fix, CHANGELOG entry present). This is a straightforward fix with proper evidence and template compliance.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/pr-precheck/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+Check quoted from `rubric.md`:
+
+"Plan fidelity | The diff and commit list, read against the plan's scope and boundary, and the description's claims about what changed | Every changed file falls within the plan's stated scope or explicitly noted in a deviation; the diff does not silently add unscoped work; if the description claims the PR "implements the plan exactly" or equivalently, the diff makes exactly what the plan describes and no more | required"
+
+Why this check: The gold labels show that silent drift (scope mismatches) is one of four failure families. This check directly detects it by comparing changed files against the plan's boundary and catching descriptions that claim fidelity but have unscoped additions. It catches both directions: PRs that do more than planned, or less without noting the deferral. The evidence source (diff against plan scope) is concrete and traceable, not subjective. Most of the rejected packages failed on this check because they either added unscoped work (new config options, rewritten functions) while claiming to "implement exactly", or made smaller changes than planned without disclosure.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+The tool scores all 20 packages correctly with perfect category distribution (7/7 clear-accept, 4/4 not-tested, 4/4 silent-drift, 2/2 standards-wall, 3/3 unreviewable). No trade-offs needed: every category is matched and the bar is exceeded. A key trade-off that could have arisen but was resolved through evidence-guide clarity: initially the tool rejected pkg-05 and pkg-13 because it required separate before/after evidence for every scenario a plan names. Revising the evidence-guide to clarify that controls (unchanged cases) are verified when the repo's test suite passes, without requiring duplicate before/after evidence, fixed these false negatives. This resolved without loosening the core checks.
 
 ---
 
