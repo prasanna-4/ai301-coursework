@@ -1,21 +1,20 @@
-# Contribution: [Issue Title]
+﻿# Contribution: [Auto-QA] Interactive elements missing ARIA labels
 
 Path: `beat-2-contribution/contribution-story.md`
 
 This file is Assignment 5, and it is graded at the path above; a copy kept anywhere else in
-the repository is not read. **Keep every section header below under its exact name** — the
+the repository is not read. **Keep every section header below under its exact name** â€” the
 format criteria grade exactly that. Your course repo link is the whole submission: no tool
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
 **Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
+**GitHub Username:** prasanna-4
+**Issue:** https://github.com/kubestellar/console/issues/24439
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
-contribution. Fill it as you work, not at the end — the sections below ask for evidence that
+contribution. Fill it as you work, not at the end â€” the sections below ask for evidence that
 is far easier to write down as it happens than to reconstruct in the last weekend.
 
 Contribution Number stays `[1]` unless you make more than one contribution this term; it
@@ -55,10 +54,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Built issue-scout skill with search queries and ranking filters; discovered query syntax errors and per-repo cap limitations**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I built the issue-scout skill by writing four search queries tailored to my fullstack TypeScript/React profile and applying ranking filters to find unclaimed, recently-updated issues. The first scan found two accepted issues, but revealed friction: Query 3's quoted syntax didn't parse (contributing zero AI-focused candidates), and one repository's automation dominated the top 5 results, wasting the grading budget. I logged these findings in scan-notes.md for future patches and selected kubestellar/console#24439 (ARIA labels) as my issue because it matched my profile perfectly and the repo explicitly welcomes AI-assisted development.
 
 **Unit 6: [one line on the tool work]**
 
@@ -280,3 +278,4 @@ One real entry beats ten plausible ones.]
 
 - [Link to documentation that helped]
 - [Discussion, issue, or post that helped]
+
