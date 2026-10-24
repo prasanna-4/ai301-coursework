@@ -1,9 +1,9 @@
-ï»¿# Contribution: [Auto-QA] Interactive elements missing ARIA labels
+# Contribution: [Auto-QA] Interactive elements missing ARIA labels
 
 Path: `beat-2-contribution/contribution-story.md`
 
 This file is Assignment 5, and it is graded at the path above; a copy kept anywhere else in
-the repository is not read. **Keep every section header below under its exact name** â€” the
+the repository is not read. **Keep every section header below under its exact name** — the
 format criteria grade exactly that. Your course repo link is the whole submission: no tool
 files and no evidence uploads are part of Assignment 5.
 
@@ -14,7 +14,7 @@ files and no evidence uploads are part of Assignment 5.
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
-contribution. Fill it as you work, not at the end â€” the sections below ask for evidence that
+contribution. Fill it as you work, not at the end — the sections below ask for evidence that
 is far easier to write down as it happens than to reconstruct in the last weekend.
 
 Contribution Number stays `1` unless you make more than one contribution this term; it
@@ -78,11 +78,11 @@ drafted, what you did with the draft.]
 
 I searched for first-contribution issues using four queries in my issue-scout skill, targeting TypeScript/React projects with AI focus and the "good first issue" or "help wanted" labels. My scan surfaced kubestellar/console#24439 in the top 5, graded it against my rubric, and it passed all required checks with an ACCEPT verdict.
 
-The scout's verdict highlighted why this issue fits my profile: it's a React + TypeScript component issue with exact file:line specifications (~30 sites), filed by a MEMBER, and the repo's CONTRIBUTING.md explicitly welcomes AI-assisted development. The difficulty note for this issue is straightforward â€” the issue clearly names where the change lives (the InteractiveElements table in INVENTORY.md and corresponding component files) and the change is bounded (adding ARIA labels to specific elements).
+The scout's verdict highlighted why this issue fits my profile: it's a React + TypeScript component issue with exact file:line specifications (~30 sites), filed by a MEMBER, and the repo's CONTRIBUTING.md explicitly welcomes AI-assisted development. The difficulty note for this issue is straightforward — the issue clearly names where the change lives (the InteractiveElements table in INVENTORY.md and corresponding component files) and the change is bounded (adding ARIA labels to specific elements).
 
 I hope to learn more about accessibility standards and how to contribute to a Kubernetes-based UI project. The scout held up well on this issue: it correctly identified the repo's AI policy, the MEMBER filing, and the bounded scope from the file:line spec. The only tension was the maintainer-responsive check which failed (0 of 6 sampled issues had maintainer comments), but this is a sample-based check and doesn't affect the accept/reject verdict.
 
-**Claim pending - October 24, 2026**
+**Claim posted:** https://github.com/kubestellar/console/issues/24439#issuecomment-6390982713
 
 **Toolkit**
 
@@ -279,3 +279,4 @@ One real entry beats ten plausible ones.]
 - KubeStellar CONTRIBUTING.md for development conventions and AI policy
 - INVENTORY.md in kubestellar/console for tracking interactive element locations
 - docs/AI-QUALITY-ASSURANCE.md for understanding CI gates and quality checks
+
